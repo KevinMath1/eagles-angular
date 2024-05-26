@@ -1,0 +1,25 @@
+<div class="login-container">
+  <div class="logo">
+    <img class="eagles" src="/assets/img/aguia.png" alt="Logotipo da Eagles" />
+    <h1>Eagles</h1>
+  </div>
+  <div class="page">
+    <h1>Listagem dos produtos</h1>
+    <div *ngIf="produtos.length > 0; else noProducts" class="card-container">
+      <div class="card" *ngFor="let produto of produtos">
+        <h2>{{ produto.nome }}</h2>
+        <p>{{ produto.descricao }}</p>
+        <p>R$ {{ produto.preco }}</p>
+        <div class="teste">
+          <button class="btn" (click)="editarProduto(produto)">Editar</button>
+          <button class="btn" (click)="deletarProduto(produto.id)">
+            Deletar
+          </button>
+        </div>
+      </div>
+    </div>
+    <ng-template #noProducts>
+      <p>Nenhum produto encontrado.</p>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="register-container">
+  <div class="logo">
+    <img class="eagles" src="/assets/img/aguia.png" alt="logssso">
+    <h1>Eagles</h1>
+  </div>
+
+  <div class="page">
+    <form class="formLogin" (ngSubmit)="onRegister()">
+      <h1>Cadastro</h1>
+      <p>Digite os seus dados do produto no campo abaixo.</p>
+
+      <label for="rg">RG</label>
+      <input
+        type="text"
+        id="rg"
+        [(ngModel)]="rg"
+        name="rg"
+        required
+        placeholder="Digite o RG"
+        autofocus
+      />
+
+      <label for="cpf">CPF</label>
+      <input
+        type="text"
+        id="cpf"
+        [(ngModel)]="cpf"
+        name="cpf"
+        required
+        placeholder="Digite o CPF"
+        autofocus
+      />
+
+      <label for="cnpj">CNPJ</label>
+      <input
+        type="text"
+        id="cnpj"
+        [(ngModel)]="cnpj"
+        name="cnpj"
+        required
+        placeholder="Digite o CNPJ"
+        autofocus
+      />
+
+      <label for="ie">IE</label>
+      <input
+        type="text"
+        id="ie"
+        [(ngModel)]="ie"
+        name="ie"
+        required
+        placeholder="Digite o IE"
+        autofocus
+      />
+
+      <input type="submit" value="Validar" class="btn" />
+    </form>
+  </div>
+</div>

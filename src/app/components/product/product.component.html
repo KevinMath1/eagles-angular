@@ -1,0 +1,92 @@
+<div class="product-container">
+  <div class="logo">
+    <img class="eagles" src="/assets/img/aguia.png" alt="logssso" />
+    <h1>Eagles</h1>
+  </div>
+
+  <div class="page">
+    <form class="formLogin" (ngSubmit)="onRegister()">
+      <h1>Produto</h1>
+      <p>Digite os seus dados do produto no campo abaixo.</p>
+
+      <label for="codigo">Codigo do produto</label>
+      <input
+        type="text"
+        id="codigo"
+        [(ngModel)]="codigo"
+        name="codigo"
+        required
+        placeholder="Digite o codigo do produto"
+        autofocus
+      />
+
+      <label for="nome">Nome do produto</label>
+      <input
+        type="text"
+        id="nome"
+        [(ngModel)]="nome"
+        name="nome"
+        required
+        placeholder="Digite o nome do produto"
+        autofocus
+      />
+
+      <label for="marca">Marca</label>
+      <input
+        type="text"
+        id="marca"
+        [(ngModel)]="marca"
+        name="marca"
+        required
+        placeholder="Digite a marca"
+        autofocus
+      />
+
+      <label for="preco">Preço</label>
+      <input
+        type="text"
+        id="preco"
+        [(ngModel)]="preco"
+        name="preco"
+        required
+        placeholder="Digite o preço"
+        autofocus
+      />
+
+      <label for="unidade">Unidade</label>
+      <input
+        type="number"
+        id="unidade"
+        [(ngModel)]="unidade"
+        name="unidade"
+        required
+        placeholder="Digite a unidade"
+        autofocus
+      />
+
+      <label for="tamanho">Tamanho</label>
+      <input
+        type="number"
+        id="tamanho"
+        [(ngModel)]="tamanho"
+        name="tamanho"
+        required
+        placeholder="Digite o tamanho"
+        autofocus
+      />
+
+      <label for="cor">Cor</label>
+      <input
+        type="text"
+        id="cor"
+        [(ngModel)]="cor"
+        name="cor"
+        required
+        placeholder="Digite a cor"
+        autofocus
+      />
+
+      <input type="submit" value="Cadastrar" class="btn" />
+    </form>
+  </div>
+</div>
