@@ -1,35 +1,47 @@
 <div class="login-container">
   <div class="logo">
-    <img class="eagles" src="/assets/img/aguia.png" alt="logssso" />
+    <img class="eagles" src="/assets/img/aguia.png" alt="logo" />
     <h1>Eagles</h1>
   </div>
   <div class="page">
-    <form class="formLogin" (ngSubmit)="onLogin()">
+    <form class="formLogin" (ngSubmit)="onLogin()" #loginForm="ngForm">
       <h1>Login</h1>
       <p>Digite os seus dados de acesso no campo abaixo.</p>
-      <label for="nome">Nome</label>
-      <input
-        type="text"
-        id="nome"
-        [(ngModel)]="name"
-        name="nome"
-        required
-        placeholder="Digite seu nome"
-        autofocus="true"
-      />
 
-      <label for="password">Senha</label>
-      <input
-        type="password"
-        id="password"
-        [(ngModel)]="password"
-        name="password"
-        required
-        placeholder="Digite sua senha"
-      />
+      <div class="input-field">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          id="nome"
+          [(ngModel)]="name"
+          name="nome"
+          #nameModel="ngModel"
+          placeholder="Digite seu nome"
+          autofocus
+        />
+        <div *ngIf="nameError" class="error">Nome obrigatório.</div>
+      </div>
 
+      <div class="input-field">
+        <label for="password">Senha</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          #passwordModel="ngModel"
+          placeholder="Digite sua senha"
+        />
+        <div *ngIf="nameError" class="error">Senha obrigatória.</div>
+      </div>
+      <p-toast></p-toast>
       <a href="/">Esqueci minha senha</a>
-      <input type="submit" value="Acessar" class="btn" />
+      <input
+        type="submit"
+        value="Acessar"
+        class="btn"
+        [disabled]="!loginForm.valid"
+      />
     </form>
   </div>
 </div>

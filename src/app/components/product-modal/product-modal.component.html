@@ -1,0 +1,129 @@
+<div class="modal-content" mat-dialog-content>
+  <h2 style="padding: 10px" mat-dialog-title>Adicionar Produto</h2>
+  <form class="formLogin" (ngSubmit)="onRegister()" #productForm="ngForm">
+    <div>
+      <label for="codigo">Codigo do produto</label>
+      <input
+        type="text"
+        id="codigo"
+        [(ngModel)]="codigo_produto"
+        name="codigo"
+        #codigoModel="ngModel"
+        required
+        placeholder="Digite o codigo do produto"
+        autofocus
+      />
+      <div *ngIf="codigoModel.invalid && codigoModel.touched" class="error">
+        Código do produto obrigatório.
+      </div>
+    </div>
+
+    <div>
+      <label for="nome">Nome do produto</label>
+      <input
+        type="text"
+        id="nome"
+        [(ngModel)]="nome"
+        name="nome"
+        #nomeModel="ngModel"
+        required
+        placeholder="Digite o nome do produto"
+      />
+      <div *ngIf="nomeModel.invalid && nomeModel.touched" class="error">
+        Nome do produto obrigatório.
+      </div>
+    </div>
+
+    <div>
+      <label for="marca">Marca</label>
+      <input
+        type="text"
+        id="marca"
+        [(ngModel)]="marca"
+        name="marca"
+        #marcaModel="ngModel"
+        required
+        placeholder="Digite a marca"
+      />
+      <div *ngIf="marcaModel.invalid && marcaModel.touched" class="error">
+        Marca obrigatória.
+      </div>
+    </div>
+
+    <div>
+      <label for="preco">Preço</label>
+      <input
+        type="text"
+        id="preco"
+        [(ngModel)]="preco"
+        name="preco"
+        #precoModel="ngModel"
+        required
+        placeholder="Digite o preço"
+      />
+      <div *ngIf="precoModel.invalid && precoModel.touched" class="error">
+        Preço obrigatório.
+      </div>
+    </div>
+
+    <div>
+      <label for="unidade">Unidade</label>
+      <input
+        type="number"
+        id="unidade"
+        [(ngModel)]="unidades"
+        name="unidade"
+        #unidadeModel="ngModel"
+        required
+        placeholder="Digite a unidade"
+      />
+      <div *ngIf="unidadeModel.invalid && unidadeModel.touched" class="error">
+        Unidade obrigatória.
+      </div>
+    </div>
+
+    <div>
+      <label for="tamanho">Tamanho</label>
+      <input
+        type="number"
+        id="tamanho"
+        [(ngModel)]="tamanho"
+        name="tamanho"
+        #tamanhoModel="ngModel"
+        required
+        placeholder="Digite o tamanho"
+      />
+      <div *ngIf="tamanhoModel.invalid && tamanhoModel.touched" class="error">
+        Tamanho obrigatório.
+      </div>
+    </div>
+
+    <div>
+      <label for="cor">Cor</label>
+      <input
+        type="text"
+        id="cor"
+        [(ngModel)]="cor"
+        name="cor"
+        #corModel="ngModel"
+        required
+        placeholder="Digite a cor"
+      />
+      <div *ngIf="corModel.invalid && corModel.touched" class="error">
+        Cor obrigatória.
+      </div>
+    </div>
+  </form>
+  <div class="buttuns" mat-dialog-actions>
+    <button class="btn" mat-button (click)="onClose()">Cancelar</button>
+    <button
+      class="btn"
+      mat-button
+      color="primary"
+      (click)="onRegister()"
+      [disabled]="!productForm.valid"
+    >
+      Cadastrar
+    </button>
+  </div>
+</div>

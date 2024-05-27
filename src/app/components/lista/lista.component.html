@@ -1,20 +1,29 @@
-<div class="login-container">
+<div class="product-container">
   <div class="logo">
     <img class="eagles" src="/assets/img/aguia.png" alt="Logotipo da Eagles" />
     <h1>Eagles</h1>
   </div>
   <div class="page">
-    <h1>Listagem dos produtos</h1>
+    <p-toast></p-toast>
+    <div class="title">
+      <h1>LISTAGEM DOS PRODUTOS</h1>
+      <button class="btn-create" (click)="abrirModal()">
+        Adicionar Produto
+      </button>
+    </div>
     <div *ngIf="produtos.length > 0; else noProducts" class="card-container">
       <div class="card" *ngFor="let produto of produtos">
         <h2>{{ produto.nome }}</h2>
-        <p>{{ produto.descricao }}</p>
+        <p>Marca: {{ produto.marca }}</p>
+        <p>Tamanho: {{ produto.tamanho }}</p>
+        <p>Cor: {{ produto.cor }}</p>
         <p>R$ {{ produto.preco }}</p>
+
         <div class="teste">
-          <button class="btn" (click)="editarProduto(produto)">Editar</button>
           <button class="btn" (click)="deletarProduto(produto.id)">
             Deletar
           </button>
+          <button class="btn" (click)="editarProduto(produto)">Editar</button>
         </div>
       </div>
     </div>

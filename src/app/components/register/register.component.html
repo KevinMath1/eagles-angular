@@ -1,24 +1,28 @@
 <div class="register-container">
   <div class="logo">
-    <img class="eagles" src="/assets/img/aguia.png" alt="logssso">
+    <img class="eagles" src="/assets/img/aguia.png" alt="logo" />
     <h1>Eagles</h1>
   </div>
 
   <div class="page">
-    <form class="formLogin" (ngSubmit)="onRegister()">
+    <form class="formLogin" (ngSubmit)="onRegister()" #registerForm="ngForm">
       <h1>Cadastro</h1>
       <p>Digite os seus dados do produto no campo abaixo.</p>
 
       <label for="rg">RG</label>
       <input
+        required
         type="text"
         id="rg"
         [(ngModel)]="rg"
         name="rg"
-        required
+        #rgModel="ngModel"
         placeholder="Digite o RG"
-        autofocus
+        mask="00.000.000-0"
       />
+      <div *ngIf="rgModel.invalid && rgModel.touched" class="error">
+        RG obrigatório.
+      </div>
 
       <label for="cpf">CPF</label>
       <input
@@ -26,10 +30,14 @@
         id="cpf"
         [(ngModel)]="cpf"
         name="cpf"
+        #cpfModel="ngModel"
         required
         placeholder="Digite o CPF"
-        autofocus
+        mask="000.000.000-00"
       />
+      <div *ngIf="cpfModel.invalid && cpfModel.touched" class="error">
+        CPF obrigatório.
+      </div>
 
       <label for="cnpj">CNPJ</label>
       <input
@@ -37,23 +45,36 @@
         id="cnpj"
         [(ngModel)]="cnpj"
         name="cnpj"
+        #cnpjModel="ngModel"
         required
         placeholder="Digite o CNPJ"
-        autofocus
+        mask="00.000.000/0000-00"
       />
+      <div *ngIf="cnpjModel.invalid && cnpjModel.touched" class="error">
+        CNPJ obrigatório.
+      </div>
 
       <label for="ie">IE</label>
       <input
+        required
         type="text"
         id="ie"
         [(ngModel)]="ie"
         name="ie"
-        required
+        #ieModel="ngModel"
         placeholder="Digite o IE"
-        autofocus
+        mask="000.000.000.000"
       />
+      <div *ngIf="ieModel.invalid && ieModel.touched" class="error">
+        IE obrigatório.
+      </div>
 
-      <input type="submit" value="Validar" class="btn" />
+      <input
+        type="submit"
+        value="Validar"
+        class="btn"
+        [disabled]="!registerForm.valid"
+      />
     </form>
   </div>
 </div>

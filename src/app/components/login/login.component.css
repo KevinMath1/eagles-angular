@@ -7,10 +7,14 @@ body {
     color: #023047
 }
 
-.logo{
-  display: flex;
- 
-}
+
+.logo {
+    display: flex;
+  }
+  .logo h1 {
+    margin:auto 0px;
+    font-size: 40px;
+  }
 
 .eagles{
 width: 140px;
@@ -106,3 +110,11 @@ width: 140px;
     background-color: #ff0676;
 
 }
+.error {
+    color: #ff3860;
+    font-size: 0.8rem;
+  }
+  
+  input.ng-invalid.ng-touched {
+    border: 1px solid #ff3860;
+  }

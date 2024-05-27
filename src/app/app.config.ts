@@ -3,7 +3,8 @@ import { provideRouter } from '@angular/router';
 
 import { AppRoutes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(AppRoutes), provideClientHydration()]
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(AppRoutes), provideClientHydration(), provideAnimationsAsync()]
 };

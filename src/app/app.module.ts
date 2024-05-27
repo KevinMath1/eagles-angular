@@ -4,14 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ProductComponent } from './components/product/product.component';
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient, HttpClientModule } from '@angular/common/http';
+import { ListaComponent } from './components/lista/lista.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'produtos', component: RegisterComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'product', component: ProductComponent }
 ];
 
 @NgModule({
@@ -21,7 +22,8 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule 
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideHttpClient()
