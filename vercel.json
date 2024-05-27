@@ -1,12 +1,15 @@
 {
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/node",
-        "config": {
-          "installCommand": "npm install --force"
-        }
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "installCommand": "npm install --force",
+        "nodeVersion": "16.x"
       }
-    ]
+    }
+  ],
+  "engines": {
+    "node": "16.x"
   }
-  
+}
